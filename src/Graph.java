@@ -77,13 +77,29 @@ public class Graph<T> {
    *          the Vertex to add
    *          
    * @return true if the vertex was added, false if it was already in the graph.
+   * @return modificado: regresa false si se crea uno nuevo y true si ya existe
    */
-  public boolean addVertex(Vertex<T> v) {
+  public boolean addVertex(Vertex<T> vIn) {
+	  boolean match = false;
+	  for (Vertex<T> v : verticies) {
+		  if ((vIn.getName()).equals(v.getName())) {
+			  match = true;
+		  }
+	  }
+	  
+	  if (match == false){
+		  //debug
+		  System.out.println("se crea uno nuevo");
+		  verticies.add(vIn);
+	  }
+	  return match;
+	  /*
     boolean added = false;
     if (verticies.contains(v) == false) {
       added = verticies.add(v);
     }
     return added;
+    */
   }
 
   /**

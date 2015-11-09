@@ -34,6 +34,7 @@ public class Main {
         	BufferedReader in = new BufferedReader(new FileReader("C:/Users/Chris/Documents/GitHub/Hoja10/src/datos.txt"));
         	
         	//Se separan los datos de ciudad1, ciudad2 y distancia(KM)
+        	
         	String d;
         	d = in.readLine();
         	String[] ar = d.split(" ");
@@ -147,6 +148,7 @@ public class Main {
 			if (a<1 || a>6){
 				System.out.println("ingreso opcion:" + a);
 				//prueba
+				System.out.println("encontrar vertice:");
 				String name = getKey.nextLine();
 				System.out.println(g.findVertexByName(name));
 				System.out.println("!!!!!!!!!ingreso un caracter invalido!!!!!!");
