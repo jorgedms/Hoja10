@@ -1,4 +1,7 @@
-izabal guatemala 400
-guatemala xelaju 200
-guatemala esquipulas 250
-guatemala zacapa 260
+guate xela 200
+guate zacapa 250
+guate usa 1500
+xela zacapa 350
+xela esquipulas 300
+esquipulas usa 1250
+zacapa esquipulas 400

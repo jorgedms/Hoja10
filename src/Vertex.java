@@ -349,11 +349,11 @@ class Vertex<T> {
    * @return a string form of the vertex with in and out edges.
    */
   public String toString() {
-    StringBuffer tmp = new StringBuffer("\nVertex(");
+    StringBuffer tmp = new StringBuffer("\nNodo(");
     tmp.append(name);
-    tmp.append(", data=");
-    tmp.append(data);
-    tmp.append("), in:[");
+    //tmp.append(", data=");
+    //tmp.append(data);
+    tmp.append(":  ingresos:[");
     for (int i = 0; i < incomingEdges.size(); i++) {
       Edge<T> e = incomingEdges.get(i);
       if (i > 0)
@@ -362,9 +362,10 @@ class Vertex<T> {
       tmp.append(e.getFrom().name);
       tmp.append(',');
       tmp.append(e.getCost());
+      tmp.append(" km");
       tmp.append('}');
     }
-    tmp.append("], out:[");
+    tmp.append("], salidas:[");
     for (int i = 0; i < outgoingEdges.size(); i++) {
       Edge<T> e = outgoingEdges.get(i);
       if (i > 0)
@@ -373,9 +374,11 @@ class Vertex<T> {
       tmp.append(e.getTo().name);
       tmp.append(',');
       tmp.append(e.getCost());
+      tmp.append(" km");
       tmp.append('}');
     }
     tmp.append(']');
+    tmp.append(')');
     return tmp.toString();
   }
 }

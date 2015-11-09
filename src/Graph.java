@@ -75,6 +75,7 @@ public class Graph<T> {
    * 
    * @param v
    *          the Vertex to add
+   *          
    * @return true if the vertex was added, false if it was already in the graph.
    */
   public boolean addVertex(Vertex<T> v) {
@@ -151,12 +152,33 @@ public class Graph<T> {
    *           if from/to are not verticies in the graph
    */
   public boolean addEdge(Vertex<T> from, Vertex<T> to, int cost) throws IllegalArgumentException {
-    if (verticies.contains(from) == false)
+	  
+	  /*
+		 * Excepciones originales no funcionan, los objetos nunca
+		 * van a ser iguales
+		 */
+	boolean match = false;
+	for (Vertex<T> v : verticies) {
+		if ((from.getName()).equals(v.getName())) {
+			from = v;
+	    	match = true;
+		}
+	}
+	  
+	if (match == false)
       throw new IllegalArgumentException("from is not in graph");
-    if (verticies.contains(to) == false)
+	
+	match = false;
+	for (Vertex<T> v : verticies) {
+		if ((to.getName()).equals(v.getName())) {
+			to = v;
+			match = true;
+		}
+	}
+    if (match == false)
       throw new IllegalArgumentException("to is not in graph");
 
-    Edge<T> e = new Edge<T>(from, to, cost);
+    Edge<T> e = new Edge<T>(from, to , cost);
     if (from.findEdge(to) != null)
       return false;
     else {

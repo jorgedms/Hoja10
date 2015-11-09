@@ -123,13 +123,13 @@ class Edge<T> {
    * @return string rep with from/to vertex names and cost
    */
   public String toString() {
-    StringBuffer tmp = new StringBuffer("Edge[from: ");
+    StringBuffer tmp = new StringBuffer("Arco [De: ");
     tmp.append(from.getName());
-    tmp.append(",to: ");
+    tmp.append("  a: ");
     tmp.append(to.getName());
-    tmp.append(", cost: ");
+    tmp.append("; distancia: ");
     tmp.append(cost);
-    tmp.append("]");
+    tmp.append("km ]\n");
     return tmp.toString();
   }
 }
