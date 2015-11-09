@@ -258,7 +258,34 @@ public class Graph<T> {
    * @return true if the Edge<T> exists, false otherwise
    */
   public boolean removeEdge(Vertex<T> from, Vertex<T> to) {
-    Edge<T> e = from.findEdge(to);
+	/*
+	 *Edge<T> e = from.findEdge(to);
+	 *
+	 *Modificacion de programa principal:
+	 *	nunca se va encontrar el arco,
+	 *	objetos diferentes de entrada
+	 */
+	  
+	  //se buscan los objetos
+	  boolean match = false;
+	  boolean match2 = false;
+	  
+	  for (Vertex<T> v : verticies) {
+		  if ((from.getName()).equals(v.getName())) {
+			  from = v;
+			  match = true;
+		  }
+	  }
+	  
+	  for (Vertex<T> v : verticies) {
+		  if ((to.getName()).equals(v.getName())) {
+			  to = v;
+			  match2 = true;
+		  }
+	  }
+	  //fin modificacion
+	
+	Edge<T> e = from.findEdge(to);
     if (e == null)
       return false;
     else {

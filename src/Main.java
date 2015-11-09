@@ -106,20 +106,28 @@ public class Main {
 				//datos de trayectoria y distancia
 				System.out.println("ingreso opcion: 2 ---> agregar arco");
 				System.out.println("Punto inicial: ");
-				Vertex aPoint = new Vertex(getKey.nextLine());
+				v = new Vertex(getKey.nextLine());
 				//g.addVertex(v);
 				System.out.println("Punto final: ");
-				Vertex bPoint = new Vertex(getKey.nextLine());
+				v2 = new Vertex(getKey.nextLine());
 				//g.addVertex(v2);
 				System.out.println("Distancia: ");
 				n = getKey.nextInt();
 				
 				//se agrega el arco
-				g.addEdge(aPoint, bPoint, n);
+				g.addEdge(v, v2, n);
 			}
 			
 			if (a == 3){
 				System.out.println("ingreso opcion: 3 ---> eliminar arco");
+				
+				System.out.println("Punto inicial: ");
+				v = new Vertex(getKey.nextLine());
+				
+				System.out.println("Punto final: ");
+				v2 = new Vertex(getKey.nextLine());
+				
+				System.out.println(g.removeEdge(v, v2));
 			}
 			
 			if (a == 4){
@@ -138,6 +146,7 @@ public class Main {
 			
 			if (a<1 || a>6){
 				System.out.println("ingreso opcion:" + a);
+				//prueba
 				String name = getKey.nextLine();
 				System.out.println(g.findVertexByName(name));
 				System.out.println("!!!!!!!!!ingreso un caracter invalido!!!!!!");
