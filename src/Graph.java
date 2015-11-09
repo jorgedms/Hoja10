@@ -84,12 +84,13 @@ public class Graph<T> {
 	  for (Vertex<T> v : verticies) {
 		  if ((vIn.getName()).equals(v.getName())) {
 			  match = true;
+			  System.out.println("-->ya se encuentra en lista");
 		  }
 	  }
 	  
 	  if (match == false){
 		  //debug
-		  System.out.println("se crea uno nuevo");
+		  System.out.println("-->se crea uno nuevo");
 		  verticies.add(vIn);
 	  }
 	  return match;
@@ -305,8 +306,8 @@ public class Graph<T> {
     if (e == null)
       return false;
     else {
-      from.remove(e);
-      to.remove(e);
+      System.out.println(from.remove(e));
+      System.out.println(to.remove(e));
       edges.remove(e);
       return true;
     }
